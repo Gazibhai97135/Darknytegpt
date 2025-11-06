@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DarkNyteGPT - AI for Ethical Cybersecurity</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Use Inter font -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+        }
+        /* Custom style for the Telegram icon (using inline SVG for simplicity) */
+        .telegram-icon {
+            fill: currentColor;
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-primary': '#0D1117', /* GitHub Dark background */
+                        'dark-secondary': '#161B22', /* Slightly lighter dark */
+                        'cyber-blue': '#00BFFF',
+                        'cyber-green': '#00FF00',
+                        'telegram-blue': '#229ED9', /* Telegram official color */
+                    }
+                }
+            }
+        }
+
+        // 1. Function for smooth scrolling for internal links
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    // Close mobile menu on click
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // 2. Mobile Menu Toggle Function
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</head>
+<body class="bg-dark-primary text-gray-200 antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-dark-secondary shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+            <h1 class="text-3xl font-extrabold text-cyber-green tracking-wider">
+                DarkNyte<span class="text-cyber-blue">GPT</span>
+            </h1>
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-300 hover:text-cyber-green transition duration-300">About</a>
+                <a href="#features" class="text-gray-300 hover:text-cyber-green transition duration-300">Features</a>
+                <a href="#telegram" class="text-gray-300 hover:text-telegram-blue transition duration-300">Telegram</a>
+                <a href="#community" class="text-gray-300 hover:text-cyber-green transition duration-300">Community</a>
+                <a href="https://github.com/your-repo-link" target="_blank" class="px-4 py-2 bg-cyber-blue text-dark-primary font-semibold rounded-lg shadow-md hover:bg-opacity-80 transition duration-300">
+                    Get Started
+                </a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-300 focus:outline-none" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-secondary pb-4">
+            <a href="#about" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">About</a>
+            <a href="#features" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Features</a>
+            <a href="#telegram" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Telegram</a>
+            <a href="#community" class="block px-4 py-2 text-gray-300 hover:bg-gray-700">Community</a>
+            <a href="https://github.com/your-repo-link" target="_blank" class="block px-4 py-2 bg-cyber-blue text-dark-primary font-semibold m-2 rounded-lg text-center">
+                Get Started
+            </a>
+        </div>
+    </header>
+
+    <main class="py-12">
+        
+        <!-- Hero Section / Banner -->
+        <section id="hero" class="relative overflow-hidden pt-12 pb-24 border-b-4 border-cyber-green/50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <!-- 
+                    ACTION REQUIRED: REPLACE THIS PLACEHOLDER URL WITH YOUR ACTUAL BANNER IMAGE URL
+                    If your image is hosted on your GitHub repo, the URL should look something like: 
+                    'https://github.com/YourUsername/DarkNyteGPT/raw/main/IMG_20251107_003433_620.jpg' 
+                -->
+                <img src="https://placehold.co/1200x300/161B22/00BFFF?text=DARKNYTE+EXODUS" 
+                     alt="DarkNyte Exodus Banner Logo" 
+                     class="w-full max-h-80 object-cover object-center rounded-xl shadow-2xl border border-gray-700 mb-10"
+                     onerror="this.onerror=null; this.src='https://placehold.co/1200x300/161B22/FFFFFF?text=DARKNYTE+GPT+AI+SECURITY';"
+                >
+
+                <h2 class="text-6xl font-extrabold mb-4 leading-tight text-white">
+                    <span class="text-cyber-green">AI-Driven</span> Defense, Built for Everyone.
+                </h2>
+                <p class="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+                    DarkNyteGPT is an open-source, community-focused Artificial Intelligence framework dedicated to proactive threat detection, secure code analysis, and ethical vulnerability research.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="https://github.com/your-repo-link" target="_blank" class="px-8 py-3 bg-cyber-green text-dark-primary font-bold text-lg rounded-xl shadow-lg hover:shadow-cyber-green/50 transform hover:scale-105 transition duration-300 ease-in-out">
+                        View Code on GitHub
+                    </a>
+                    <a href="#features" class="px-8 py-3 border-2 border-cyber-blue text-cyber-blue font-bold text-lg rounded-xl shadow-lg hover:bg-cyber-blue/10 transform hover:scale-105 transition duration-300 ease-in-out">
+                        Explore Features
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <h3 class="text-4xl font-bold text-cyber-blue mb-8 text-center">About DarkNyteGPT</h3>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-lg text-gray-300 mb-6">
+                        In the rapidly evolving landscape of cyber threats, passive defense is no longer enough. DarkNyteGPT harnesses the power of advanced LLMs and specialized machine learning models to provide security intelligence that is both fast and deeply contextual.
+                    </p>
+                    <p class="text-lg text-gray-300">
+                        Our core mission is to democratize security. By building this framework as an open-source tool, we empower security teams, independent researchers, and developers worldwide to strengthen their defenses and understand the adversary's perspective through ethical simulation and analysis.
+                    </p>
+                </div>
+                <div class="bg-dark-secondary p-8 rounded-xl shadow-inner border border-gray-700">
+                    <div class="text-2xl font-mono text-cyber-green">
+                        <span class="text-cyber-blue">>>></span> python darknyte.py --audit
+                    </div>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li><span class="text-cyber-green">></span> Status: Framework Initialized</li>
+                        <li><span class="text-cyber-green">></span> Goal: Proactive Threat Mitigation</li>
+                        <li><span class="text-cyber-green">></span> Model: Gemini 2.5 Security-Optimized</li>
+                        <li><span class="text-cyber-green">></span> Community: <span class="text-cyber-blue">100+ Contributors</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-dark-secondary rounded-2xl my-16 shadow-2xl">
+            <h3 class="text-4xl font-bold text-cyber-green mb-12 text-center">Core Defensive Capabilities</h3>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature Card 1: Vulnerability Scanning -->
+                <div class="p-6 bg-dark-primary rounded-xl border border-gray-700 hover:shadow-xl hover:border-cyber-blue transition duration-300">
+                    <div class="text-4xl text-cyber-blue mb-4">🛡️</div>
+                    <h4 class="text-2xl font-semibold mb-3 text-white">Automated V-Scanning</h4>
+                    <p class="text-gray-400">Quickly identify and classify vulnerabilities in your application code and infrastructure configurations using deep learning pattern matching.</p>
+                </div>
+                
+                <!-- Feature Card 2: Secure Code Review -->
+                <div class="p-6 bg-dark-primary rounded-xl border border-gray-700 hover:shadow-xl hover:border-cyber-blue transition duration-300">
+                    <div class="text-4xl text-cyber-green mb-4">✍️</div>
+                    <h4 class="text-2xl font-semibold mb-3 text-white">Secure Code Review</h4>
+                    <p class="text-gray-400">Receive real-time, actionable suggestions to fix security flaws, guided by best practices and compliance standards (OWASP Top 10).</p>
+                </div>
+                
+                <!-- Feature Card 3: Threat Intelligence -->
+                <div class="p-6 bg-dark-primary rounded-xl border border-gray-700 hover:shadow-xl hover:border-cyber-blue transition duration-300">
+                    <div class="text-4xl text-cyber-blue mb-4">🌐</div>
+                    <h4 class="text-2xl font-semibold mb-3 text-white">Real-time Threat Intel</h4>
+                    <p class="text-gray-400">Aggregate and analyze global threat feeds to predict attack vectors and prioritize defensive actions before a breach occurs.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Telegram Community Section -->
+        <section id="telegram" class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+            <h3 class="text-4xl font-bold text-telegram-blue mb-6">Join the Conversation</h3>
+            <p class="text-xl text-gray-300 mb-8">
+                Connect directly with the DarkNyteGPT community for discussions, support, and the latest updates on AI-driven cybersecurity.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8">
+                <!-- Group Link: https://t.me/darknyteexodus -->
+                <a href="https://t.me/darknyteexodus" target="_blank" class="px-8 py-4 bg-telegram-blue text-white font-bold text-lg rounded-xl shadow-lg hover:bg-opacity-80 transition duration-300 flex items-center justify-center">
+                    <!-- Telegram Icon SVG -->
+                    <svg class="telegram-icon mr-3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.3 8.71L9.15 13.9c-.83.33-1.46.12-1.74-.63-.28-.75.46-1.57 1.29-1.9L15 8.9c.7-.28 1.13.1 1.05.65-.08.55-.49.9-1.14 1.16zM8.33 16.5l.3-.46c.15-.22.38-.34.63-.34.25 0 .48.12.63.34l.3.46c.12.18.25.33.4.45l.8.6c.18.14.4.15.6.03l.35-.2c.22-.13.3-.39.2-.64l-.35-.86c-.16-.39-.12-.85.1-1.2l2.67-4.01c.28-.42.75-.6.93-.4l.2.14c.2.14.18.39-.05.63l-2.67 4.01c-.3.45-.75.63-1.2.63h-.2c-.37 0-.7-.14-.95-.4l-1.3-.95c-.2-.14-.45-.14-.65 0l-1.3.95c-.25.18-.55.27-.85.27h-.2c-.45 0-.8-.18-1.07-.63L8.33 16.5z"/>
+                    </svg>
+                    Official Telegram Group
+                </a>
+                
+                <!-- Admin Account Link: @D4RkNYTEAdmin -->
+                <a href="https://t.me/D4RkNYTEAdmin" target="_blank" class="px-8 py-4 border-2 border-telegram-blue text-telegram-blue font-bold text-lg rounded-xl shadow-lg hover:bg-telegram-blue/10 transition duration-300 flex items-center justify-center">
+                    <!-- Telegram Icon SVG -->
+                    <svg class="telegram-icon mr-3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.3 8.71L9.15 13.9c-.83.33-1.46.12-1.74-.63-.28-.75.46-1.57 1.29-1.9L15 8.9c.7-.28 1.13.1 1.05.65-.08.55-.49.9-1.14 1.16zM8.33 16.5l.3-.46c.15-.22.38-.34.63-.34.25 0 .48.12.63.34l.3.46c.12.18.25.33.4.45l.8.6c.18.14.4.15.6.03l.35-.2c.22-.13.3-.39.2-.64l-.35-.86c-.16-.39-.12-.85.1-1.2l2.67-4.01c.28-.42.75-.6.93-.4l.2.14c.2.14.18.39-.05.63l-2.67 4.01c-.3.45-.75.63-1.2.63h-.2c-.37 0-.7-.14-.95-.4l-1.3-.95c-.2-.14-.45-.14-.65 0l-1.3.95c-.25.18-.55.27-.85.27h-.2c-.45 0-.8-.18-1.07-.63L8.33 16.5z"/>
+                    </svg>
+                    Message Admin: @D4RkNYTEAdmin
+                </a>
+            </div>
+        </section>
+
+
+        <!-- Community & Contribution Section (GitHub Focus) -->
+        <section id="community" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
+            <h3 class="text-4xl font-bold text-white mb-8">Contribute to DarkNyteGPT</h3>
+            <p class="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
+                DarkNyteGPT thrives on collaboration. We welcome ethical security researchers, developers, and data scientists to contribute to the next generation of defensive AI tools.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://github.com/your-repo-link/contribute" target="_blank" class="px-6 py-3 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    Contribute Code
+                </a>
+                <a href="https://github.com/your-repo-link/issues" target="_blank" class="px-6 py-3 bg-gray-700 text-white font-semibold rounded-lg shadow-md hover:bg-gray-600 transition duration-300">
+                    Report an Issue
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-secondary mt-12 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            <p>&copy; 2025 DarkNyteGPT Project. Open Source for Ethical Security Research.</p>
+            <p class="text-sm mt-2">Built with <span class="text-red-500">♥</span> for the cybersecurity community.</p>
+        </div>
+    </footer>
+
+</body>
+      </html>
